@@ -24,6 +24,7 @@ web-design-facens/
 │   ├── atividade-03-html5-semantico/       # tags semânticas, CSS interno e inline
 │   └── atividade-04-html5-multimidia/      # imagens, vídeo, áudio, formulário, tabela, SEO
 ├── projetos/
+    └── portfolio-web-design/
 │   └── grao-e-aroma/                       # landing page completa (HTML + CSS externo)
 ├── resumos/
 │   ├── 01-html5-semantica-e-multimidia.md
