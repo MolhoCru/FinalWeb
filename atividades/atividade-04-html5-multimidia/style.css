@@ -1,0 +1,53 @@
+/* Estilos da Atividade 4 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 20px 20px;
+    line-height: 1.6;
+}
+
+header, footer {
+    text-align: center;
+    background-color: #1f3a5f;
+    color: #fff;
+    padding: 12px;
+}
+
+/* Elementos multimídia adaptáveis */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Parágrafos com a classe .destaque recebem fundo amarelo claro */
+.destaque {
+    background-color: #fffacd;
+    padding: 8px;
+}
+
+/* Div usada como contêiner */
+.caixa {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: left;
+}
+thead { background-color: #e0e7ef; }
+
+form { display: flex; flex-direction: column; gap: 8px; max-width: 400px; }
+
+/* Responsividade: telas pequenas em uma coluna */
+@media (max-width: 600px) {
+    body { padding: 0 10px 10px; }
+    video { width: 100%; }
+}

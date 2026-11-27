@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: título, descrição, palavras-chave e robots -->
+    <title>Atividade 4 - Recursos HTML5</title>
+    <meta name="description" content="Página de prática com os principais recursos do HTML5: imagens, vídeo, áudio, formulário, links, listas e tabela.">
+    <meta name="keywords" content="HTML5, CSS, web design, multimídia, formulário">
+    <meta name="robots" content="index, follow">
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Atividade 4 - Recursos HTML5</h1>
+    </header>
+
+    <main>
+        <!-- ID usado como âncora e seletor -->
+        <p id="introducao">
+            Esta página foi criada para praticar os principais recursos do HTML5.
+        </p>
+
+        <!-- ===== Imagens (src, alt, width e height) ===== -->
+        <h2>Imagens</h2>
+        <img src="imagem1.png" alt="Imagem 1" width="200" height="150">
+        <img src="imagem2.png" alt="Imagem 2" width="200" height="150">
+        <img src="imagem3.png" alt="Imagem 3">
+
+        <!-- ===== Vídeo (controls, width, poster) ===== -->
+        <h2>Vídeo</h2>
+        <video controls width="400" poster="poster1.png">
+            <source src="zoio.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+
+        <!-- ===== Áudio (controls, vários formatos) ===== -->
+        <h2>Áudio</h2>
+        <audio controls>
+            <source src="musica.mp3" type="audio/mpeg">
+            <source src="musica.ogg" type="audio/ogg">
+            Seu navegador não suporta áudio.
+        </audio>
+
+        <!-- ===== Formulário (nome e e-mail obrigatórios) ===== -->
+        <h2>Formulário</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- ===== Links ===== -->
+        <h2>Links</h2>
+        <p><a href="https://www.google.com">Google</a></p>
+        <p>
+            <a href="https://avatarfiles.alphacoders.com/377/thumb-1920-377436.jpg">
+                <img src="imagem1.png" alt="Imagem com link" width="150">
+            </a>
+        </p>
+        <p>
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+                Abrir em nova aba
+            </a>
+        </p>
+
+        <!-- ===== Listas ===== -->
+        <h2>Listas</h2>
+        <ol>
+            <li>Passo 1</li>
+            <li>Passo 2</li>
+            <li>Passo 3</li>
+        </ol>
+        <ul>
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+        </ul>
+
+        <!-- ===== Tabela (thead + tbody) ===== -->
+        <h2>Tabela</h2>
+        <table>
+            <thead>
+                <tr><th>Tecnologia</th><th>Função</th><th>Extensão</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>HTML</td><td>Estrutura</td><td>.html</td></tr>
+                <tr><td>CSS</td><td>Estilo</td><td>.css</td></tr>
+                <tr><td>JavaScript</td><td>Interatividade</td><td>.js</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ===== Div como contêiner + classes ===== -->
+        <div class="caixa">
+            <h3>Subtítulo da caixa</h3>
+            <p class="destaque">Primeiro parágrafo em destaque.</p>
+            <p class="destaque">Segundo parágrafo em destaque.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Web Design - Facens</p>
+    </footer>
+</body>
+</html>

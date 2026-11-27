@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- A tag DOCTYPE informa ao navegador que este é um documento HTML5 -->
+<html lang="pt-BR">
+<!-- A tag html é a raiz do documento; lang="pt-BR" define o idioma como Português do Brasil -->
+
+<head>
+    <!-- O cabeçalho (head) contém metadados, título e os estilos CSS da página -->
+    <meta charset="utf-8"> <!-- Permite o uso de caracteres especiais e acentos -->
+    <title>minha pagina</title> <!-- Define o título que aparece na aba do navegador -->
+
+    <!-- Bloco de estilo (CSS interno) com as classes solicitadas na atividade -->
+    <style>
+        .center { text-align: center; }                    /* Centraliza o texto */
+        .sublinhado { text-decoration: underline; }        /* Adiciona uma linha embaixo do texto */
+        .riscado { text-decoration: line-through; }        /* Adiciona uma linha cortando o texto */
+        .azul { color: blue; font-size: 24px; }            /* Muda a cor para azul e aumenta a fonte */
+        .justificado { text-align: justify; }              /* Justifica o texto, alinhando nas duas margens */
+    </style>
+</head>
+
+<body>
+    <!-- A tag body contém todo o conteúdo que será exibido na tela do navegador -->
+
+    <!-- Cabeçalho principal da página -->
+    <header>
+        <!-- Títulos de tamanhos diferentes (h1 ao h6) com alinhamentos via estilo inline -->
+        <h1 style="text-align: center;">nossa pagina</h1>
+        <h2>bem vindo ao nosso trabalho</h2>
+        <h3 style="text-align: right;">web design</h3>
+        <h4>Conteúdo</h4>
+        <h5>HTML e CSS</h5>
+        <h6>Aula</h6>
+    </header>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <p>
+            <!-- Links âncora que levam para partes específicas (IDs) da mesma página -->
+            <a href="#posts">Posts</a> |
+            <a href="#lateral">Lateral</a> |
+            <a href="#rodape">Rodapé</a>
+        </p>
+    </nav>
+
+    <!-- Seção principal de conteúdo (Posts) vinculada ao link de navegação -->
+    <section id="posts">
+        <!-- O article agrupa um conteúdo independente, como um post de blog -->
+        <article class="post">
+
+            <!-- Cabeçalho específico deste artigo -->
+            <header>
+                <h2>nossa primeira pagina – primeiro post</h2>
+            </header>
+
+            <!-- Parágrafo aplicando formatações de texto semânticas e classes CSS -->
+            <p>
+                Texto <strong>negrito</strong>, <em>itálico</em>,
+                <span class="sublinhado">sublinhado</span>,
+                <span class="riscado">riscado</span>,
+                H<sub>2</sub>O e 2<sup>2</sup>. <!-- Exemplos de subscrito e sobrescrito -->
+            </p>
+
+            <!-- Parágrafo utilizando a classe .azul criada no bloco <style> -->
+            <p class="azul">texto azul maior.</p>
+
+            <!-- Divisão em bloco centralizada usando a classe .center -->
+            <div class="center">texto centralizado</div>
+
+            <!-- Parágrafo longo com alinhamento justificado e quebra de linha -->
+            <p class="justificado">
+                texto mais comprido para mostrar o alinhamento
+                <br> <!-- Tag <br> faz uma quebra de linha manual -->
+                continuação depois a quebra de linha.
+            </p>
+
+        </article>
+    </section>
+
+    <!-- Barra lateral (aside) usada para informações complementares -->
+    <aside id="lateral">
+        <h3>conteúdo relacionado</h3>
+        <p>informacoes relacionadas ao conteúdo da pagina</p>
+    </aside>
+
+    <!-- Rodapé (footer) da página -->
+    <footer id="rodape">
+        <p>&copy; 2025 – exemplo aula</p>
+    </footer>
+
+</body>
+</html>
