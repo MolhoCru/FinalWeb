@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coloque nome · Portfólio</title>
+  <meta name="description" content="Portfólio com projetos, cases, trajetória e stack.">
+  <meta property="og:title" content="Coloque nome · Portfólio">
+  <meta property="og:description" content="Portfólio com projetos, cases, trajetória e stack.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400..800&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <!-- Aplica o tema antes de desenhar a página. -->
+  <script src="js/tema.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__barra">
+      <a class="logo" href="index.html" aria-label="Ir para a página inicial"><span aria-hidden="true">~/</span>coloque.nome</a>
+
+      <div class="cabecalho__lado">
+        <nav class="nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cases.html">Cases</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="stack.html">Stack</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="cabecalho__acoes">
+          <div class="tema" role="group" aria-label="Tema">
+            <button class="tema__botao" type="button" data-definir-tema="claro" aria-label="Usar tema claro" title="Usar tema claro">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+            <button class="tema__botao" type="button" data-definir-tema="escuro" aria-label="Usar tema escuro" title="Usar tema escuro">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+          </div>
+          <a class="botao botao--primario cabecalho__cta" href="contato.html">Entre em contato</a>
+          <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+            <svg class="icone icone--abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+            <svg class="icone icone--fechar" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu-mobile" id="menu-mobile" aria-label="Navegação principal" hidden>
+      <ul class="container">
+        <li><a class="menu-mobile__link" href="index.html" aria-current="page"><span class="nav__marca" aria-hidden="true">/</span>Home</a></li>
+        <li><a class="menu-mobile__link" href="projetos.html"><span class="nav__marca" aria-hidden="true">/</span>Projetos</a></li>
+        <li><a class="menu-mobile__link" href="cases.html"><span class="nav__marca" aria-hidden="true">/</span>Cases</a></li>
+        <li><a class="menu-mobile__link" href="sobre.html"><span class="nav__marca" aria-hidden="true">/</span>Sobre</a></li>
+        <li><a class="menu-mobile__link" href="stack.html"><span class="nav__marca" aria-hidden="true">/</span>Stack</a></li>
+        <li><a class="menu-mobile__link" href="contato.html"><span class="nav__marca" aria-hidden="true">/</span>Contato</a></li>
+        <li class="menu-mobile__cta"><a class="botao botao--primario" href="contato.html">Entre em contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="grafico" aria-hidden="true">
+        <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="grafico-area" x1="0" y1="0" x2="0" y2="1">
+              <stop class="grafico__area-cor" offset="0" stop-opacity="0.16" />
+              <stop class="grafico__area-cor" offset="1" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+
+          <!-- Linhas de escala -->
+          <line class="grafico__escala" x1="0" x2="1200" y1="100" y2="100" />
+          <line class="grafico__escala" x1="0" x2="1200" y1="200" y2="200" />
+          <line class="grafico__escala" x1="0" x2="1200" y1="300" y2="300" />
+
+          <!-- Limite de alerta -->
+          <line class="grafico__limite" x1="640" x2="1200" y1="150" y2="150" />
+
+          <!-- Estável, pico no alerta, platô durante a investigação e queda depois da correção -->
+          <path class="grafico__area" d="M0,338 L90,341 L180,336 L270,340 L360,337 L450,341 L540,336 L600,339 L624,332 L655,240 L690,130 L725,78 L780,66 L840,74 L900,60 L940,70 L970,68 L1000,170 L1040,290 L1075,350 L1110,372 L1200,376 L1200,400 L0,400 Z" />
+          <path class="grafico__linha" d="M0,338 L90,341 L180,336 L270,340 L360,337 L450,341 L540,336 L600,339 L624,332 L655,240 L690,130 L725,78 L780,66 L840,74 L900,60 L940,70 L970,68" />
+          <path class="grafico__linha grafico__linha--recuperacao" d="M970,68 L1000,170 L1040,290 L1075,350 L1110,372 L1200,376" />
+        </svg>
+
+        <div class="grafico__rotulos">
+          <span class="grafico__metrica">tempo de resposta (ms)</span>
+          <span class="grafico__nome-limite">limite de alerta</span>
+          <span class="grafico__marco grafico__marco--alerta" style="--x: 52%"><span>09:12:04</span></span>
+          <span class="grafico__marco" style="--x: 80.8%"><span>09:38:47</span></span>
+          <span class="grafico__marco" style="--x: 92.5%"><span>09:44:02</span></span>
+        </div>
+      </div>
+
+      <div class="container hero__grade">
+        <div>
+          <h1 class="hero__titulo">Coloque seu <span>cargo.</span></h1>
+          <p class="hero__subtitulo">Olá! Me chamo Coloque nome. Use este espaço para contar, em duas ou três linhas, com o que você trabalha, o que constrói e o que a pessoa vai encontrar neste portfólio.</p>
+          <div class="hero__acoes">
+            <a class="botao botao--primario" href="#quem-sou">Quem sou eu <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+            <a class="botao botao--secundario" href="assets/curriculos/curriculo-pt-br.pdf" target="_blank" rel="noopener noreferrer"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg> Baixar currículo<span class="so-leitor"> (abre em nova aba)</span></a>
+          </div>
+        </div>
+
+        <div class="hero__painel">
+          <div class="janela">
+            <div class="janela__barra">
+              <p class="janela__titulo"><span>investigacao.log</span></p>
+              <p class="janela__lateral">● resolvido</p>
+            </div>
+            <ol class="log">
+              <li style="--i: 0">
+                <span class="log__hora">09:12:04</span>
+                <span><span class="log__nivel log__nivel--warn">WARN</span> tempo de resposta da listagem acima de 2 s</span>
+              </li>
+              <li style="--i: 1">
+                <span class="log__hora">09:15:31</span>
+                <span><span class="log__nivel log__nivel--info">INFO</span> consulta lenta identificada no log do banco</span>
+              </li>
+              <li style="--i: 2">
+                <span class="log__hora">09:24:10</span>
+                <span><span class="log__nivel log__nivel--info">INFO</span> causa raiz: filtro por data sem índice</span>
+              </li>
+              <li style="--i: 3">
+                <span class="log__hora">09:38:47</span>
+                <span><span class="log__nivel log__nivel--fix">FIX </span> índice criado e consulta reescrita</span>
+              </li>
+              <li style="--i: 4">
+                <span class="log__hora">09:44:02</span>
+                <span><span class="log__nivel log__nivel--done">DONE</span> resposta de volta a 180 ms em produção</span>
+              </li>
+            </ol>
+            <p class="log__rodape"><span>$</span> medir primeiro, corrigir depois <span class="cursor" aria-hidden="true"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que eu faço -->
+    <section class="secao" id="o-que-faco" aria-labelledby="o-que-faco-titulo">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div class="secao__topo">
+            <p class="rotulo secao__categoria">O que eu faço</p>
+            <a class="botao botao--secundario" href="stack.html">Ver stack completa <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <h2 class="secao__titulo" id="o-que-faco-titulo">Como é o meu dia a dia</h2>
+          <p class="secao__descricao">Apresente aqui, em poucas linhas, as frentes em que você atua. Cada bloco abaixo é uma delas, com as tecnologias que você usa.</p>
+        </div>
+
+        <ol class="frentes">
+          <li data-revelar>
+            <p class="frentes__numero">01</p>
+            <h3 class="frentes__titulo">Desenvolvimento Front-End</h3>
+            <p class="frentes__descricao">Descreva aqui o que você constrói no dia a dia: páginas, componentes e interfaces que funcionam em qualquer tela.</p>
+            <ul class="tags">
+              <li class="tag tag--mono">HTML</li>
+              <li class="tag tag--mono">CSS</li>
+              <li class="tag tag--mono">JavaScript</li>
+              <li class="tag tag--mono">Acessibilidade</li>
+            </ul>
+          </li>
+          <li data-revelar data-atraso="0.05">
+            <p class="frentes__numero">02</p>
+            <h3 class="frentes__titulo">Desenvolvimento Back-End</h3>
+            <p class="frentes__descricao">Conte com quais regras de negócio, integrações e bancos de dados você trabalha, e o que entrega com eles.</p>
+            <ul class="tags">
+              <li class="tag tag--mono">APIs REST</li>
+              <li class="tag tag--mono">SQL</li>
+              <li class="tag tag--mono">Node.js</li>
+            </ul>
+          </li>
+          <li data-revelar data-atraso="0.10">
+            <p class="frentes__numero">03</p>
+            <h3 class="frentes__titulo">Qualidade e entrega</h3>
+            <p class="frentes__descricao">Explique como você garante que o que escreve funciona: testes, revisão de código e cuidado com o ambiente.</p>
+            <ul class="tags">
+              <li class="tag tag--mono">Git</li>
+              <li class="tag tag--mono">Testes</li>
+              <li class="tag tag--mono">Deploy</li>
+            </ul>
+          </li>
+          <li data-revelar data-atraso="0.15">
+            <p class="frentes__numero">04</p>
+            <h3 class="frentes__titulo">Estudo e projetos próprios</h3>
+            <p class="frentes__descricao">Fale do que você estuda fora do trabalho ou da faculdade e dos projetos que faz por curiosidade.</p>
+            <ul class="tags">
+              <li class="tag tag--mono">Coloque</li>
+              <li class="tag tag--mono">suas</li>
+              <li class="tag tag--mono">tecnologias</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="skills" data-revelar>
+          <p class="rotulo skills__rotulo">Habilidades em destaque</p>
+          <div class="skills__grade">
+            <div class="skills__coluna--hard">
+              <h3 class="skills__titulo">Hard skills</h3>
+              <ul class="skills__lista">
+                <li>HTML semântico e acessibilidade</li>
+                <li>CSS: Flexbox, Grid e variáveis</li>
+                <li>JavaScript</li>
+                <li>Design responsivo</li>
+                <li>Git e GitHub</li>
+                <li>Coloque outra habilidade técnica</li>
+              </ul>
+            </div>
+            <div class="skills__coluna--soft">
+              <h3 class="skills__titulo">Soft skills</h3>
+              <ul class="skills__lista">
+                <li>Comunicação clara</li>
+                <li>Organização e priorização</li>
+                <li>Trabalho em equipe</li>
+                <li>Aprendizado contínuo</li>
+                <li>Atenção aos detalhes</li>
+                <li>Coloque outra habilidade pessoal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="divisor"></div>
+    </div>
+
+    <!-- Projetos -->
+    <section class="secao" id="projetos" data-tom="projeto" aria-labelledby="projetos-titulo">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div class="secao__topo">
+            <h2 class="rotulo secao__categoria" id="projetos-titulo">Meus projetos</h2>
+            <a class="botao botao--secundario" href="projetos.html">Todos os projetos <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <p class="secao__descricao">Trabalhos da faculdade, desafios técnicos, projetos de utilidade pessoal e ideias que eu queria ver funcionando. Em cada um, escolho a stack que faz mais sentido para o que o projeto precisa.</p>
+        </div>
+
+        <div class="bento">
+          <div data-revelar>
+            <article class="card card--destaque">
+              <div class="capa" aria-hidden="true">
+                <div class="malha"></div>
+                <p class="capa__caminho"><span>~</span>/projetos/api-de-pedidos</p>
+              </div>
+              <div class="card__corpo">
+                <div class="card__topo">
+                  <h3 class="card__titulo"><a href="projetos/api-de-pedidos.html">Exemplo: API de pedidos</a></h3>
+                  <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <p class="card__resumo">Projeto de exemplo. Uma API que centralizou pedidos de 3 canais de venda e cortou o tempo de resposta de 1,8 s para 240 ms.</p>
+                <ul class="tags">
+                  <li class="tag tag--tom">Back-End</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="bento__lado">
+            <div data-revelar data-atraso="0.06">
+              <article class="card">
+                <div class="card__corpo">
+                  <div class="card__topo">
+                    <h3 class="card__titulo"><a href="projetos/painel-de-chamados.html">Exemplo: Painel de chamados</a></h3>
+                    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </div>
+                  <p class="card__resumo">Projeto de exemplo. Um painel que mostra os chamados por prioridade e reduziu de 5 para 1 o número de telas consultadas pelo suporte.</p>
+                  <ul class="tags">
+                    <li class="tag tag--tom">Full Stack</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div data-revelar data-atraso="0.12">
+              <article class="card">
+                <div class="card__corpo">
+                  <div class="card__topo">
+                    <h3 class="card__titulo"><a href="projetos/portfolio.html">Este portfólio</a></h3>
+                    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </div>
+                  <p class="card__resumo">O site que você está vendo: HTML, CSS e JavaScript puros, com tema claro e escuro, componentes reaproveitados e nenhuma dependência.</p>
+                  <ul class="tags">
+                    <li class="tag tag--tom">Front-End</li>
+                    <li class="tag">Em construção</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cases -->
+    <section class="secao secao--faixa" id="cases" data-tom="case" aria-labelledby="cases-titulo">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div class="secao__topo">
+            <h2 class="rotulo secao__categoria" id="cases-titulo">Meus cases</h2>
+            <a class="botao botao--secundario" href="cases.html">Todos os cases <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <p class="secao__descricao">Experiências reais do meu dia a dia, anonimizadas para preservar dados de clientes e regras internas. Os nomes mudam, mas a lógica continua a mesma.</p>
+        </div>
+
+        <div class="bento">
+          <div data-revelar>
+            <article class="card card--destaque">
+              <div class="capa" aria-hidden="true">
+                <div class="malha"></div>
+                <p class="capa__caminho"><span>~</span>/cases/fila-travada</p>
+              </div>
+              <div class="card__corpo">
+                <div class="card__topo">
+                  <h3 class="card__titulo"><a href="cases/fila-travada.html">Exemplo: A fila que travava toda segunda</a></h3>
+                  <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <p class="card__resumo">Case de exemplo. Uma fila de processamento parava toda segunda de manhã; a causa era uma consulta sem índice, não o volume.</p>
+                <ul class="tags">
+                  <li class="tag tag--tom">Investigação</li>
+                  <li class="tag">Anonimizado</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="bento__lado">
+            <div data-revelar data-atraso="0.06">
+              <article class="card">
+                <div class="card__corpo">
+                  <div class="card__topo">
+                    <h3 class="card__titulo"><a href="cases/relatorio-lento.html">Exemplo: O relatório que levava 9 minutos</a></h3>
+                    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </div>
+                  <p class="card__resumo">Case de exemplo. Um relatório mensal levava 9 minutos para abrir e passou a abrir em 12 segundos, sem trocar de tecnologia.</p>
+                  <ul class="tags">
+                    <li class="tag tag--tom">Desempenho</li>
+                    <li class="tag">Anonimizado</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div data-revelar data-atraso="0.12">
+              <article class="card">
+                <div class="card__corpo">
+                  <div class="card__topo">
+                    <h3 class="card__titulo"><a href="cases/integracao-instavel.html">Exemplo: A integração que falhava em silêncio</a></h3>
+                    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </div>
+                  <p class="card__resumo">Case de exemplo. Cerca de 2% dos cadastros se perdiam em uma integração sem aviso; com novas tentativas e alerta, a perda foi a zero.</p>
+                  <ul class="tags">
+                    <li class="tag tag--tom">Integração</li>
+                    <li class="tag">Anonimizado</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem sou eu -->
+    <section class="secao" id="quem-sou" aria-labelledby="quem-sou-titulo">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div class="secao__topo">
+            <p class="rotulo secao__categoria">Quem sou eu</p>
+            <a class="botao botao--secundario" href="sobre.html">Minha trajetória completa <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <h2 class="secao__titulo" id="quem-sou-titulo">Prazer, Coloque nome</h2>
+        </div>
+
+        <div class="quem-sou">
+          <div class="quem-sou__texto">
+            <p>Oi! Sou Coloque nome. Use este primeiro parágrafo para dizer quem você é, onde trabalha ou estuda e o que faz hoje.</p>
+            <p>No segundo, conte de onde você veio: como começou na área, por quais funções passou e o que essa trajetória te ensinou.</p>
+            <p>Feche com o que você gosta de fazer fora do trabalho e com o que está estudando no momento.</p>
+          </div>
+
+          <div class="janela" data-revelar>
+            <div class="janela__barra">
+              <p class="janela__titulo"><span>GET /api/eu</span></p>
+              <p class="janela__lateral">200 OK</p>
+            </div>
+            <div class="ficha">
+              <p class="ficha__pontuacao" style="--i: 0">{</p>
+              <p class="ficha__campo" style="--i: 1"><span class="ficha__chave">"nome"</span><span class="ficha__pontuacao">: </span><span class="ficha__valor">"Coloque nome"</span><span class="ficha__pontuacao">,</span></p>
+              <p class="ficha__campo" style="--i: 2"><span class="ficha__chave">"cargo"</span><span class="ficha__pontuacao">: </span><span class="ficha__valor">"Coloque seu cargo"</span><span class="ficha__pontuacao">,</span></p>
+              <p class="ficha__campo" style="--i: 3"><span class="ficha__chave">"empresa"</span><span class="ficha__pontuacao">: </span><span class="ficha__valor">"Coloque sua empresa"</span><span class="ficha__pontuacao">,</span></p>
+              <p class="ficha__campo" style="--i: 4"><span class="ficha__chave">"formacao"</span><span class="ficha__pontuacao">: </span><span class="ficha__valor">"Coloque sua formação"</span><span class="ficha__pontuacao">,</span></p>
+              <p class="ficha__campo" style="--i: 5"><span class="ficha__chave">"status"</span><span class="ficha__pontuacao">: </span><span class="ficha__valor">"aberto a conversas"</span></p>
+              <p class="ficha__pontuacao" style="--i: 6">} <span class="cursor" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <div class="rodape__grade">
+        <div>
+          <p class="rodape__nome">Coloque nome</p>
+          <p class="rodape__cargo">Coloque seu cargo</p>
+        </div>
+
+        <div class="rodape__colunas">
+          <div>
+            <h2 class="rotulo">Navegar</h2>
+            <ul>
+              <li><a href="projetos.html">Projetos</a></li>
+              <li><a href="cases.html">Cases</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="stack.html">Stack</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="rotulo">Currículos</h2>
+            <ul>
+              <li><a href="assets/curriculos/curriculo-pt-br.pdf" target="_blank" rel="noopener noreferrer">Português (BR)<span class="so-leitor"> (abre em nova aba)</span></a></li>
+              <li><a href="assets/curriculos/resume-en.pdf" target="_blank" rel="noopener noreferrer" lang="en">English<span class="so-leitor" lang="pt-BR"> (abre em nova aba)</span></a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="rotulo">Contatos</h2>
+            <ul>
+              <li><a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">GitHub<span class="so-leitor"> (abre em nova aba)</span></a></li>
+              <li><a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">LinkedIn<span class="so-leitor"> (abre em nova aba)</span></a></li>
+              <li><a href="mailto:seuemail@exemplo.com">E-mail</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divisor"></div>
+      <p class="rodape__direitos">© <span id="ano">2026</span> Coloque nome</p>
+    </div>
+  </footer>
+
+  <script src="js/menu.js" defer></script>
+  <script src="js/rodape.js" defer></script>
+  <script src="js/revelar.js" defer></script>
+</body>
+</html>

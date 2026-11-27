@@ -1,0 +1,295 @@
+/*
+ * LAYOUT
+ * Cabeçalho fixo e rodapé, repetidos em todas as páginas.
+ */
+
+/* --------------------------------- Cabeçalho -------------------------------- */
+
+.cabecalho {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  border-bottom: 1px solid var(--linha);
+  background: color-mix(in srgb, var(--fundo) 85%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* O cabeçalho é fixo: o conteúdo começa logo abaixo dele. */
+main {
+  padding-top: var(--altura-cabecalho);
+}
+
+.cabecalho__barra {
+  display: flex;
+  height: var(--altura-cabecalho);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--fonte-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.logo span {
+  color: var(--ambar);
+}
+
+.cabecalho__lado {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cabecalho__acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+/* O botão de contato só cabe a partir de 640px. */
+.cabecalho__cta {
+  display: none;
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cabecalho__cta {
+    display: inline-flex;
+  }
+}
+
+/* Navegação em linha, a partir de 1024px. */
+.nav {
+  display: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav a {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 999px;
+  color: var(--texto-suave);
+  font-size: 0.9375rem;
+  transition: color 150ms;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--texto);
+}
+
+/* A barra em mono marca a página atual. */
+.nav__marca {
+  margin-right: 0.25rem;
+  color: var(--ambar);
+  font-family: var(--fonte-mono);
+}
+
+@media (min-width: 64rem) {
+  .nav {
+    display: block;
+  }
+}
+
+/* ------------------------------ Alternar tema ------------------------------- */
+
+/* Controle segmentado sol/lua. O lado ativo é pintado só com CSS. */
+.tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.125rem;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: var(--superficie);
+}
+
+.tema__botao {
+  display: inline-flex;
+  width: 1.75rem;
+  height: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--texto-suave);
+  transition: color 150ms;
+}
+
+.tema__botao:hover {
+  color: var(--texto);
+}
+
+.tema__botao .icone {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+:root:not([data-tema="claro"]) .tema__botao[data-definir-tema="escuro"],
+[data-tema="claro"] .tema__botao[data-definir-tema="claro"] {
+  background: var(--superficie-2);
+  color: var(--texto);
+}
+
+/* -------------------------------- Menu mobile ------------------------------- */
+
+.menu-botao {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+}
+
+/* O ícone troca entre "menu" e "fechar" conforme o estado do botão. */
+.menu-botao .icone--fechar,
+.menu-botao[aria-expanded="true"] .icone--abrir {
+  display: none;
+}
+
+.menu-botao[aria-expanded="true"] .icone--fechar {
+  display: block;
+}
+
+.menu-mobile {
+  border-top: 1px solid var(--linha);
+  background: var(--fundo);
+}
+
+.menu-mobile ul {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0.75rem;
+}
+
+.menu-mobile__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.menu-mobile__link[aria-current="page"] {
+  color: var(--texto);
+}
+
+.menu-mobile__link .nav__marca {
+  margin-right: 0;
+  opacity: 0;
+}
+
+.menu-mobile__link[aria-current="page"] .nav__marca {
+  opacity: 1;
+}
+
+/* No celular o botão de contato sai da barra e vem para o fim do menu. */
+.menu-mobile__cta {
+  padding: 0.75rem 0 0.5rem;
+}
+
+.menu-mobile__cta .botao {
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .menu-mobile__cta {
+    display: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  .menu-botao,
+  .menu-mobile {
+    display: none;
+  }
+}
+
+/* ---------------------------------- Rodapé ---------------------------------- */
+
+.rodape {
+  border-top: 1px solid var(--linha);
+  background: var(--superficie);
+}
+
+.rodape__conteudo {
+  padding-block: 4rem;
+}
+
+.rodape__grade {
+  display: grid;
+  gap: 3rem;
+}
+
+.rodape__nome {
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+}
+
+.rodape__cargo {
+  max-width: 18rem;
+  margin-top: 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+.rodape__colunas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.rodape__colunas h2 {
+  color: var(--ambar);
+}
+
+.rodape__colunas ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+
+.rodape__colunas a {
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  transition: color 150ms;
+}
+
+.rodape__colunas a:hover {
+  color: var(--texto);
+}
+
+.rodape .divisor {
+  margin-top: 3.5rem;
+}
+
+.rodape__direitos {
+  margin-top: 1.5rem;
+  color: var(--texto-suave);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 40rem) {
+  .rodape__colunas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .rodape__grade {
+    grid-template-columns: 1.3fr 2fr;
+  }
+}

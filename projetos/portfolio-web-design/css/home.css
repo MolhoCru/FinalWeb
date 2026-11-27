@@ -1,0 +1,402 @@
+/*
+ * HOME
+ * Estilos que só a página inicial usa.
+ */
+
+/* ----------------------------------- Hero ----------------------------------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--linha);
+}
+
+.hero__grade {
+  position: relative;
+  display: grid;
+  min-height: min(calc(100svh - var(--altura-cabecalho)), 54rem);
+  align-content: center;
+  align-items: start;
+  gap: 3rem;
+  padding-block: 4rem;
+}
+
+.hero__titulo {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+/* A segunda parte do título vai em mono, na cor de destaque. */
+.hero__titulo span {
+  color: var(--ambar);
+  font-family: var(--fonte-mono);
+  font-size: 0.82em;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.hero__subtitulo {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  color: var(--texto-suave);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* Painel de log: a "assinatura" visual do site, revelada linha a linha. */
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.8125rem;
+  line-height: 1.625;
+}
+
+.log li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  animation: log-entra 0.35s var(--curva-saida) both;
+  animation-delay: calc(0.35s + var(--i) * 0.45s);
+}
+
+.log__hora {
+  color: var(--codigo-suave);
+}
+
+.log__nivel {
+  font-weight: 600;
+  white-space: pre;
+}
+
+.log__nivel--warn {
+  color: var(--codigo-ambar);
+}
+
+.log__nivel--info {
+  color: var(--codigo-azul);
+}
+
+.log__nivel--fix {
+  color: var(--codigo-violeta);
+}
+
+.log__nivel--done {
+  color: var(--codigo-verde);
+}
+
+.log__rodape {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--codigo-linha);
+  color: var(--codigo-suave);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+}
+
+.log__rodape > span:first-child {
+  color: var(--codigo-ambar);
+}
+
+@keyframes log-entra {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+}
+
+@media (min-width: 40rem) {
+  .hero__titulo {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero__grade {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    padding-block: 6rem;
+  }
+
+  .hero__titulo {
+    font-size: 5rem;
+  }
+
+  .hero__subtitulo {
+    font-size: 1.25rem;
+  }
+
+  /* Compensa o espaço acima das maiúsculas, para o topo do painel bater com o das letras. */
+  .hero__painel {
+    margin-top: 0.875rem;
+  }
+}
+
+/* ------------------------------ Gráfico do hero ----------------------------- */
+
+/*
+ * Fundo do hero: o gráfico de monitoramento do incidente que o painel de log
+ * conta. A métrica fica estável, sobe no alerta e cai depois da correção.
+ * Aparece só a partir de 1024px, onde o hero tem duas colunas.
+ */
+.grafico {
+  position: absolute;
+  inset: auto 0 0;
+  display: none;
+  height: 62%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* O traçado é revelado da esquerda para a direita por um recorte. */
+.grafico svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: grafico-revela 2.4s linear 0.2s both;
+}
+
+.grafico line,
+.grafico path {
+  vector-effect: non-scaling-stroke;
+}
+
+.grafico__escala {
+  stroke: var(--linha);
+  stroke-width: 1;
+}
+
+.grafico__limite {
+  stroke: var(--ambar);
+  stroke-width: 1;
+  stroke-dasharray: 5 6;
+  stroke-opacity: 0.45;
+}
+
+.grafico__area {
+  fill: url(#grafico-area);
+}
+
+.grafico__area-cor {
+  stop-color: var(--ambar);
+}
+
+.grafico__linha {
+  fill: none;
+  stroke: var(--ambar);
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+}
+
+.grafico__linha--recuperacao {
+  stroke: var(--verde);
+}
+
+/* Os rótulos ficam em HTML, posicionados em %, para o texto não esticar com o SVG. */
+.grafico__rotulos {
+  position: absolute;
+  inset: 0;
+  color: var(--texto-suave);
+  font-family: var(--fonte-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.025em;
+  animation: grafico-surge 0.6s 0.4s both;
+}
+
+.grafico__metrica {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 2.5rem;
+}
+
+.grafico__nome-limite {
+  position: absolute;
+  top: 37.5%;
+  right: 2.5rem;
+  padding-bottom: 0.25rem;
+  color: var(--ambar);
+  transform: translateY(-100%);
+}
+
+.grafico__marco {
+  position: absolute;
+  inset-block: 0;
+  left: var(--x);
+  border-left: 1px dashed var(--linha-forte);
+}
+
+.grafico__marco span {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.5rem;
+  color: var(--verde);
+}
+
+.grafico__marco--alerta span {
+  color: var(--ambar);
+}
+
+@keyframes grafico-revela {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes grafico-surge {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  .grafico {
+    display: block;
+  }
+}
+
+/* ------------------------------- O que eu faço ------------------------------ */
+
+.frentes {
+  display: grid;
+  column-gap: 2.5rem;
+  border-top: 1px solid var(--linha);
+}
+
+.frentes > li {
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--linha);
+}
+
+.frentes__numero {
+  color: var(--ambar);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+}
+
+.frentes__titulo {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: -0.025em;
+}
+
+.frentes__descricao {
+  margin-top: 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.9375rem;
+  line-height: 1.625;
+}
+
+.frentes .tags {
+  margin-top: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .frentes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.secao .skills {
+  margin-top: 2.5rem;
+}
+
+/* ------------------------------ Projetos e cases ---------------------------- */
+
+/* Grade da home: 1 card grande com capa à esquerda e os demais, só de texto, à direita. */
+.bento,
+.bento__lado {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* A seção de cases ganha um fundo próprio para se separar da de projetos. */
+.secao--faixa {
+  border-block: 1px solid var(--linha);
+  background: color-mix(in srgb, var(--superficie) 50%, transparent);
+}
+
+@media (min-width: 64rem) {
+  .bento {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+/* -------------------------------- Quem sou eu ------------------------------- */
+
+.quem-sou {
+  display: grid;
+  align-items: start;
+  gap: 2.5rem;
+}
+
+.quem-sou__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--texto-suave);
+  font-size: 1.125rem;
+  line-height: 1.625;
+}
+
+/* Ficha em formato de resposta de API: um JSON revelado linha a linha. */
+.ficha {
+  padding: 1.25rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.8125rem;
+  line-height: 1.75rem;
+}
+
+.ficha__campo {
+  padding-left: 1.25rem;
+}
+
+.ficha__chave {
+  color: var(--codigo-azul);
+}
+
+.ficha__valor {
+  color: var(--codigo-ambar);
+}
+
+.ficha__pontuacao {
+  color: var(--codigo-suave);
+}
+
+/* Aqui quem entra são as linhas, não o bloco: a janela fica parada. */
+.js .janela[data-revelar] {
+  opacity: 1;
+  transform: none;
+}
+
+.js .janela[data-revelar] .ficha p {
+  opacity: 0;
+}
+
+.js .janela[data-revelar].visivel .ficha p {
+  opacity: 1;
+  animation: log-entra 0.35s var(--curva-saida) both;
+  animation-delay: calc(0.15s + var(--i) * 0.18s);
+}
+
+@media (min-width: 64rem) {
+  .quem-sou {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+  }
+}
