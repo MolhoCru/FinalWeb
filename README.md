@@ -43,6 +43,7 @@ web-design-facens/
 | 3 | Estrutura semântica | `header`, `nav`, `section`, `article`, `aside`, `footer`, CSS interno/inline | [`atividade-03-html5-semantico`](atividades/atividade-03-html5-semantico) |
 | 4 | Recursos HTML5 | Imagens, vídeo, áudio, formulário, listas, tabela, SEO, `@media` | [`atividade-04-html5-multimidia`](atividades/atividade-04-html5-multimidia) |
 | 5 | Site **Grão & Aroma** | CSS externo, Flexbox, Grid, animações, responsividade, sem JavaScript | [`projetos/grao-e-aroma`](projetos/grao-e-aroma) |
+| 6 | Site **Projeto final** | CSS externo, Flexbox, Grid, animações, responsividade, com JavaScript | [`projetos/portfolio-web-design`](projetos/portfolio-web-design) |
 
 ## Resumos de apoio
 
@@ -56,6 +57,7 @@ web-design-facens/
 - [Atividade 3](relatorios/atividade-03-relatorio.pdf)
 - [Atividade 4](relatorios/atividade-04-relatorio.pdf) · [versão ampliada com SEO](relatorios/atividade-04-relatorio-versao-ampliada-seo.pdf)
 - [Atividade 5 — Grão & Aroma](relatorios/atividade-05-grao-e-aroma-relatorio.pdf)
+- [Atividade Final] 
 
 ## Como visualizar
 
