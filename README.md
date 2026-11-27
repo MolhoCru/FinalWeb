@@ -57,7 +57,7 @@ web-design-facens/
 - [Atividade 3](relatorios/atividade-03-relatorio.pdf)
 - [Atividade 4](relatorios/atividade-04-relatorio.pdf) · [versão ampliada com SEO](relatorios/atividade-04-relatorio-versao-ampliada-seo.pdf)
 - [Atividade 5 — Grão & Aroma](relatorios/atividade-05-grao-e-aroma-relatorio.pdf)
-- [Atividade Final] (relatorios/AF WEB DESINGN.pdf)
+- [Atividade - Final](relatorios/AF-WEB-DESINGN.pdf)
 
 ## Como visualizar
 
